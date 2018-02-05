@@ -1,6 +1,6 @@
-const express = require('express')
-const passport = require('passport')
-const Account = require('../models/account')
+const express = require('express');
+const passport = require('passport');
+const Account = require('../models/account');
 const router = express.Router();
 
 // get for the login
@@ -10,7 +10,7 @@ const router = express.Router();
 router.post("/register", function(req, res){
 	Account.register(new Account({
 		username: req.body.username
-	},
+	}),
 	req.body.password,
 	function(err, account){
 		if(err){
@@ -21,7 +21,7 @@ router.post("/register", function(req, res){
 		passport.authenticate('local')(req, res, function(){
 			res.json(true);
 		})
-	}))
+	})
 });
 // login
 router.post("/login", passport.authenticate('local'), function(req, res){

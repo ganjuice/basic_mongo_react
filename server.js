@@ -41,7 +41,7 @@ if(process.env.NODE_ENV ==="production"){
 	app.use(express.static("client/build"));
 }
 
-app.use('api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get("/api/test", function(req, res){
 	return res.json("all good!");
