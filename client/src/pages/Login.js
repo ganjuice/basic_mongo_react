@@ -8,16 +8,17 @@ class Login extends React.Component {
 	};
 
 	handleInputChange = event => {
-		const {name, value } = event.target;
+		const {name, type, value } = event.target;
 		this.setState({
-			[name]:value
+			[name]:value,
+			[type]: value
 		})
 	};
 	handleFormSubmit = event => {
 		event.preventDefault()
 		if(this.state.username && this.state.password){
 			const data = {username: this.state.username, password: this.state.password}
-			axios.post("/api/auth/login".data).then(res => {
+			axios.post("/api/auth/login", data).then(res => {
 				console.log(res);
 			})
 		}

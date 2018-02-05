@@ -6,10 +6,8 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import NoMatch from "./pages/NoMatch";
 
-import logo from './logo.svg';
 import './App.css';
 
-import axios from "axios";
 
 class App extends Component {
   render() {

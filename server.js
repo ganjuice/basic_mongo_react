@@ -21,12 +21,15 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-const Account = require('./models/account');
+const Account = require("./models/account");
+mongoose.connect('mongodb://localhost/basic_mongo_react');
+passport.use(Account.createStrategy());
+
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-mongoose.connect('mongodb://localhost/basic_mongo_react');
+
 
 // Initialize our session
 app.use(expressSession({
@@ -41,7 +44,7 @@ if(process.env.NODE_ENV ==="production"){
 	app.use(express.static("client/build"));
 }
 
-app.use('api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get("/api/test", function(req, res){
 	return res.json("all good!");
