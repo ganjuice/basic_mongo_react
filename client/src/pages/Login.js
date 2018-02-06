@@ -11,11 +11,15 @@ class Login extends React.Component {
 		const {name, type, value } = event.target;
 		this.setState({
 			[name]:value,
+<<<<<<< HEAD
 			[type]: value
+=======
+			[type]:value
+>>>>>>> b12cd8332c8d237f04181392c4ea973b1c745578
 		})
 	};
 	handleFormSubmit = event => {
-		event.preventDefault()
+		event.preventDefault();
 		if(this.state.username && this.state.password){
 			const data = {username: this.state.username, password: this.state.password}
 			axios.post("/api/auth/login", data).then(res => {

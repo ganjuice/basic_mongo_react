@@ -23,8 +23,12 @@ class Register extends React.Component {
 				console.log(res);
 			})
 
+<<<<<<< HEAD
 			console.log(data);
 			
+=======
+			console.log(data)
+>>>>>>> b12cd8332c8d237f04181392c4ea973b1c745578
 		}
 	};
 

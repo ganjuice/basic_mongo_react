@@ -10,7 +10,11 @@ const router = express.Router();
 router.post("/register", function(req, res){
 	console.log("hello");
 	Account.register(new Account({
+<<<<<<< HEAD
 		username: req.body.username,
+=======
+		username: req.body.username
+>>>>>>> b12cd8332c8d237f04181392c4ea973b1c745578
 	}),
 	req.body.password,
 	function(err, account){
