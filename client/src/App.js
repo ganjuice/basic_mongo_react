@@ -5,7 +5,6 @@ import Login from"./pages/Login";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import NoMatch from "./pages/NoMatch";
-import {GoogleApiWrapper} from 'google-maps-react';
 
 import './App.css';
 
